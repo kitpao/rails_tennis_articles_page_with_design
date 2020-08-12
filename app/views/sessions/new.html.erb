@@ -1,2 +1,7 @@
-<h1>The log in page, with a form</h1>
-<p>Add action to save to session post path</p>
+<h1>Log in page</h1>
+<%= form_with scope: :session, url: sessions_path, local: true do |f| %>
+  <%= f.label :name %><br>
+  <%= f.text_field :name, autofocus: true %>
+  <br><br>
+  <%= f.submit 'Log in!' %>
+<% end %>

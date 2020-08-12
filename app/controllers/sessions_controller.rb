@@ -2,7 +2,7 @@ class SessionsController < ApplicationController
   def new; end
 
   def create
-    user = User.find_by_name(user_session_params.downcase)
+    user = User.find_by_name(user_session_params)
     if user && !user.nil?
       session[:user_id] = user.id
       flash[:success] = 'You have logged in!'
@@ -22,6 +22,6 @@ class SessionsController < ApplicationController
   private
 
   def user_session_params
-    params.require(:session).permit(:name)
+    params[:session][:name].downcase
   end
 end
