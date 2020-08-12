@@ -30,6 +30,7 @@ group :development, :test do
   gem 'capybara'
   gem 'cloudinary'
   gem 'factory_bot_rails'
+  gem 'faker'
   gem 'rspec-rails'
   # Use sqlite3 as the database for Active Record in development
   gem 'sqlite3', '~> 1.4'
