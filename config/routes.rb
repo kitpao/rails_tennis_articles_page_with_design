@@ -7,6 +7,6 @@ Rails.application.routes.draw do
   resources :categories, only: %i[show] # homepage down / #each category
   get '/sign_up', to: 'users#new' # sign up
   get '/log_in', to: 'sessions#new' # log in
-  get '/log_out', to: 'sessions#destroy' # log out
+  delete '/log_out', to: 'sessions#destroy' # log out
   root 'categories#index' # homepage
 end
