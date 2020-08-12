@@ -1,5 +1,7 @@
 FactoryBot.define do
   factory :article do
-    # empty
+    author { nil }
+    title { Faker::Lorem.sentence }
+    text { Faker::Lorem.paragraph }
   end
 end

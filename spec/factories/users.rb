@@ -1,5 +1,5 @@
 FactoryBot.define do
   factory :user do
-    # empty
+    name { Faker::Movies::HarryPotter.character }
   end
 end

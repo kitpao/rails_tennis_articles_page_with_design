@@ -1,5 +1,6 @@
 FactoryBot.define do
   factory :category do
-    # empty
+    name { Faker::Lorem.sentence }
+    priority { rand(1...10) }
   end
 end
