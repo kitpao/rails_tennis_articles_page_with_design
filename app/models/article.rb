@@ -7,8 +7,5 @@ class Article < ApplicationRecord
   validates :title, presence: true, uniqueness: { case_sensitive: false }
   validates :text, presence: true
   validates :categories, presence: true
-  # use this in future controller:  a.categories << Category.first
   # add a default image
-  # scope by :most_recent_by_category
-  # scope by :most voted
 end

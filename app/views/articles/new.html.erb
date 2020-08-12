@@ -1,1 +1,20 @@
-<h1>The new articles page, with a form</h1>
+<h1>Write your article!</h1>
+<%= form_with model: @article, local: true do |f| %>
+
+  <% if @article.errors.any? %>
+    <p>You have the following <%= pluralize(@article.errors.count, 'error')%>:</p>
+    <% @article.errors.full_messages.each do |msg| %>
+      <ul>
+        <li><%= msg %></li>
+      </ul>
+    <% end %>
+  <% end %>
+
+  <%= f.label :title %><br>
+  <%= f.text_field :title, autofocus: true %>
+  <br><br>
+  <%= f.label :text %><br>
+  <%= f.text_area :text%>
+  <br><br>
+  <%= f.submit 'Submit your Article!' %>
+<% end %>
