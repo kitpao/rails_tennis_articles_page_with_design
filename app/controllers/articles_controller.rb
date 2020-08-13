@@ -1,12 +1,13 @@
 class ArticlesController < ApplicationController
-  # Add filter to require login
+  before_action :require_user
+
   def new
     @article = Article.new
   end
 
   def create
-    @article = Article.new(article_params)
-    @article.author = User.first # current_user
+    @article = current_user.articles.build(article_params)
+
     # add categories
     # add image
 
