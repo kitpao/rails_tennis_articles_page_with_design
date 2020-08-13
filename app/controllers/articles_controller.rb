@@ -9,7 +9,6 @@ class ArticlesController < ApplicationController
     @article = current_user.articles.build(article_params)
 
     # add categories
-    # add image
 
     if @article.save
       flash[:success] = 'Your article was created successfully'
@@ -23,7 +22,7 @@ class ArticlesController < ApplicationController
   private
 
   def article_params
-    params.require(:article).permit(:title, :text)
+    params.require(:article).permit(:title, :text, :image)
   end
   # use this in future controller:  a.categories << Category.first
 end
