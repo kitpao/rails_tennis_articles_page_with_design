@@ -6,4 +6,5 @@ class Article < ApplicationRecord
 
   validates :title, presence: true, uniqueness: { case_sensitive: false }
   # add a default image
+  scope :ordered_by_most_recent, -> { order(created_at: :desc) }
 end

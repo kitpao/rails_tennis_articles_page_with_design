@@ -5,7 +5,16 @@ class CategoriesController < ApplicationController
   end
 
   def show
-    # blank
+    @category = Category.find(params[:id])
+    related_articles
+
+    render json: related_articles
+  end
+
+  private
+
+  def related_articles
+    @related_articles ||= @category.articles.ordered_by_most_recent
   end
 end
 
