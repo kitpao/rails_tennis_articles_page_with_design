@@ -8,7 +8,6 @@ class ArticlesController < ApplicationController
 
   def create
     @article = current_user.articles.build(article_params)
-    @article.save
 
     if @article.save
       @article.categories << Category.find(category_ids)
