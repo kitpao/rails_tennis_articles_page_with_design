@@ -3,9 +3,7 @@ class ArticlesController < ApplicationController
 
   def new
     @article = Article.new
-
     @categories = Category.all
-
   end
 
   def create
@@ -18,6 +16,7 @@ class ArticlesController < ApplicationController
       redirect_to root_path
     else
       flash.now[:danger] = 'Ups, something went wrong, please check the errors'
+      @categories = Category.all
       render :new
     end
   end
@@ -29,6 +28,6 @@ class ArticlesController < ApplicationController
   end
 
   def category_ids
-    params[:category][:id]
+    params[:selected_id]
   end
 end

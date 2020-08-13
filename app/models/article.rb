@@ -6,6 +6,5 @@ class Article < ApplicationRecord
   has_many :articles_categories
 
   validates :title, presence: true, uniqueness: { case_sensitive: false }
-  # validates :categories, presence: true
   # add a default image
 end

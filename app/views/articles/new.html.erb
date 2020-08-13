@@ -19,10 +19,9 @@
   <%= f.label :image %><br>
   <%= f.file_field :image, direct_upload: true %>
   <br><br>
-  <%= fields_for(@categories) do |s| %>
+  <%= fields_for(@selected) do |s| %>
     <%= s.label 'Select as many categories as needed' %><br>
-
-    <%= s.collection_select(:id, @categories, :id, :name, {selected: 1, include_hidden: false}, { multiple: true }) %>
+    <%= s.collection_select(:selected_id, @categories, :id, :name, {selected: 4, include_hidden: false}, { multiple: true }) %>
   <% end %>
   <br><br>
   <%= f.submit 'Submit your Article!' %>
