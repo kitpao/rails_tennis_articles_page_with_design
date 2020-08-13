@@ -3,14 +3,17 @@ class ArticlesController < ApplicationController
 
   def new
     @article = Article.new
+
+    @categories = Category.all
+
   end
 
   def create
     @article = current_user.articles.build(article_params)
-
-    # add categories
+    @article.save
 
     if @article.save
+      @article.categories << Category.find(category_ids)
       flash[:success] = 'Your article was created successfully'
       redirect_to root_path
     else
@@ -24,5 +27,8 @@ class ArticlesController < ApplicationController
   def article_params
     params.require(:article).permit(:title, :text, :image)
   end
-  # use this in future controller:  a.categories << Category.first
+
+  def category_ids
+    params[:category][:id]
+  end
 end

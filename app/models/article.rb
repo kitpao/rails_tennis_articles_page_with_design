@@ -3,9 +3,9 @@ class Article < ApplicationRecord
   has_many :votes
   has_and_belongs_to_many :categories
   has_one_attached :image
+  has_many :articles_categories
 
   validates :title, presence: true, uniqueness: { case_sensitive: false }
-  validates :text, presence: true
-  validates :categories, presence: true
+  # validates :categories, presence: true
   # add a default image
 end
