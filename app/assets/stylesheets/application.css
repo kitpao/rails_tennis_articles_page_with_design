@@ -13,3 +13,37 @@
  *= require_tree .
  *= require_self
  */
+a {
+  text-decoration: none;
+}
+
+body {
+  margin: 0;
+  font-family: 'Lato', sans-serif;
+}
+
+li {
+  list-style-type: none;
+  line-height: 1.5rem;
+  text-align: center;
+}
+
+.flex {
+  display: flex;
+}
+
+.space-between {
+  justify-content: space-between;
+}
+
+.vertical-center {
+  align-items: center;
+}
+
+.gray-links a {
+  color: #838080;
+}
+
+.orange-links a {
+  color: #ffa500;
+}

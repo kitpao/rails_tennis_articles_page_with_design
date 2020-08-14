@@ -1,0 +1,19 @@
+<header>
+  <nav class="gray-links">
+    <ul class="flex space-between">
+      <li class="logo">
+        <%= image_tag("tennis-ball.jpg", :alt => "logo tennis ball") %>
+      </li>
+      <ul class="flex">
+        <li class= "orange-links"><%= link_to 'Home', root_path %></li>
+        <li><%= link_to Category.first.name, 'categories/1' %></li>
+        <li><%= link_to Category.find(2).name, 'categories/2' %></li>
+        <li><%= link_to Category.find(3).name, 'categories/3' %></li>
+        <li><%= link_to Category.find(4).name, 'categories/3' %></li>
+      </ul>
+      <ul class="flex">
+        <%= session_controls %>
+      </ul>
+    </ul>
+  </nav>
+</header>

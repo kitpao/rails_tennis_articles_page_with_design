@@ -22,3 +22,6 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
+Credits for their images hosted in Unsplash to:
+Kevin Mueller - tennis ball
