@@ -1,27 +1,28 @@
 class CategoriesController < ApplicationController
-  # add before filter to create categories
+  # add before filter to create categories and 1 article per category
   def index
-    @articles = Article.all
-    @most_popular = @articles.most_popular
-
-    render json: @articles.most_popular
+    categories = Category.includes(:articles).all
+    articles = Article.all
+    @most_popular = articles.most_popular
+    @articles_by_cat = []
+    categories.each do |cat|
+      @articles_by_cat << recent_article(cat)
+    end
   end
 
   def show
-    @category = Category.find(params[:id])
-    related_articles
-
-    render json: related_articles
+    @category = Category.includes(:articles).find(params[:id])
+    recent_related_articles
   end
 
   private
 
-  def related_articles
-    @related_articles ||= @category.articles.ordered_by_most_recent
+  def recent_related_articles
+    @recent_related_articles ||= @category.articles.ordered_by_most_recent
   end
 
-  def popular
-    @popular ||= @articles.includes(:vote).most_popular
+  def recent_article(category)
+    category.articles.ordered_by_most_recent.first
   end
 end
 

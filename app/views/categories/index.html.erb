@@ -1,1 +1,6 @@
 <h1>The homepage, displaying the most recent article per category and the most voted article</h1>
+<%= @most_popular.title %>
+</br>
+<% @articles_by_cat.each do |art| %>
+ <%= art.title %>
+<% end %>

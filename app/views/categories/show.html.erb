@@ -1,1 +1,5 @@
 <h1>The categories page, displaying the articles by most recent</h1>
+
+<% @recent_related_articles.each do |art| %>
+ <%= art.id %>
+<% end %>
