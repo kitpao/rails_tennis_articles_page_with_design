@@ -6,10 +6,10 @@
       </li>
       <ul class="flex">
         <li class= "orange-links"><%= link_to 'Home', root_path %></li>
-        <li><%= link_to Category.first.name, 'categories/1' %></li>
-        <li><%= link_to Category.find(2).name, 'categories/2' %></li>
-        <li><%= link_to Category.find(3).name, 'categories/3' %></li>
-        <li><%= link_to Category.find(4).name, 'categories/3' %></li>
+        <li><%= link_to Category.first.name, category_path(Category.first) %></li>
+        <li><%= link_to Category.find(2).name, category_path(Category.find(2)) %></li>
+        <li><%= link_to Category.find(3).name, category_path(Category.find(3)) %></li>
+        <li><%= link_to Category.find(4).name, category_path(Category.find(4)) %></li>
       </ul>
       <ul class="flex">
         <%= session_controls %>
