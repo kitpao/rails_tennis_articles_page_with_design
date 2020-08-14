@@ -12,7 +12,7 @@ class UsersController < ApplicationController
       flash[:success] = 'User created succesfully'
       redirect_to root_path
     else
-      flash.now[:notice] = 'Something went wrong, please check the errors'
+      flash.now[:danger] = 'Something went wrong, please check the errors'
       render :new
     end
   end

@@ -55,3 +55,7 @@ li {
 .white-text {
   color: #fff;
 }
+
+.test {
+  border: red 1px solid;
+}
