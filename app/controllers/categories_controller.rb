@@ -1,7 +1,10 @@
 class CategoriesController < ApplicationController
   # add before filter to create categories
   def index
-    # blank
+    @articles = Article.all
+    @most_popular = @articles.most_popular
+
+    render json: @articles.most_popular
   end
 
   def show
@@ -15,6 +18,10 @@ class CategoriesController < ApplicationController
 
   def related_articles
     @related_articles ||= @category.articles.ordered_by_most_recent
+  end
+
+  def popular
+    @popular ||= @articles.includes(:vote).most_popular
   end
 end
 
