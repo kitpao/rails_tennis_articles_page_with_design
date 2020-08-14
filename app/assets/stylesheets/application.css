@@ -18,13 +18,13 @@ a {
 }
 
 body {
-  margin: 0;
   font-family: 'Lato', sans-serif;
+  margin: 0;
 }
 
 li {
-  list-style-type: none;
   line-height: 1.5rem;
+  list-style-type: none;
   text-align: center;
 }
 
@@ -46,4 +46,12 @@ li {
 
 .orange-links a {
   color: #ffa500;
+}
+
+.dark-orange-links a {
+  color: #ff5a00;
+}
+
+.white-text {
+  color: #fff;
 }
