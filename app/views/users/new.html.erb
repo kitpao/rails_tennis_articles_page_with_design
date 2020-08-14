@@ -1,17 +1,20 @@
-<h1>Sign up page</h1>
-<%= form_with model: @user, local: true do |f| %>
+<div class="form-page">
+  <h1>Sign up here</h1>
+  <%= form_with model: @user, local: true do |f| %>
 
-  <% if @user.errors.any? %>
-    <p>You have the following <%= pluralize(@user.errors.count, 'error')%>:</p>
-    <% @user.errors.full_messages.each do |msg| %>
-      <ul>
-        <li><%= msg %></li>
-      </ul>
+    <% if @user.errors.any? %>
+      <p>You have the following <%= pluralize(@user.errors.count, 'error')%>:</p>
+      <% @user.errors.full_messages.each do |msg| %>
+        <ul>
+          <li><%= msg %></li>
+        </ul>
+      <% end %>
     <% end %>
+
+    <%= f.label :your_name %><br>
+    <%= f.text_field :name, autofocus: true %>
+    <br><br>
+    <%= f.submit 'Log in!', class: 'btn' %>
   <% end %>
 
-  <%= f.label :name %><br>
-  <%= f.text_field :name, autofocus: true %>
-  <br><br>
-  <%= f.submit 'Log in!' %>
-<% end %>
+</div>
