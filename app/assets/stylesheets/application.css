@@ -60,6 +60,10 @@ li {
   color: #fff;
 }
 
+.center-text {
+  text-align: center;
+}
+
 .test {
   border: red 1px solid;
 }
