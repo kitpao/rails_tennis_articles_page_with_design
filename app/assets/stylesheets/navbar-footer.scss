@@ -41,15 +41,18 @@ li {
 }
 
 nav {
+  position: fixed;
+  top: 0;
   border-bottom: #838080 4px solid;
+  max-height: 6.5rem;
+  width: 100%;
 
   li {
     text-transform: uppercase;
   }
 
   .logo {
-    min-height: 4.5rem;
-    max-height: 7rem;
+    max-height: 5.5rem;
     border-bottom: #ff2500 4px solid;
     margin-bottom: calc(-0.5rem - 4px);
   }
