@@ -1,7 +1,8 @@
 
 .form-page {
   text-align: center;
-  padding-top: 3rem;
+  padding-top: 2rem;
+  padding-bottom: 10rem;
 
   label {
     color: #ff5a00;
@@ -20,6 +21,16 @@
 
 .circle-list {
   list-style-type: circle;
+}
+
+.title {
+  width: 35rem;
+}
+
+select[multiple] {
+  margin-top: 0.5rem;
+  border-width: 2px;
+  border-style: inset;
 }
 
 .btn {

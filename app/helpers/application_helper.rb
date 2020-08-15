@@ -2,7 +2,9 @@ module ApplicationHelper
   def session_controls
     if current_user
       content_tag(:li) do
-        content_tag(:span, "Welcome #{current_user.name}")
+        content_tag(:span) do
+          link_to "Write as #{current_user.name}", new_article_path
+        end
       end +
         content_tag(:li, ' | ') +
         content_tag(:li) do

@@ -1,28 +1,34 @@
-<h1>Write your article!</h1>
-<%= form_with model: @article, local: true do |f| %>
+<div class="form-page">
+  <h1>Write your article!</h1>
+  <%= form_with model: @article, local: true do |f| %>
 
-  <% if @article.errors.any? %>
-    <p>You have the following <%= pluralize(@article.errors.count, 'error')%>:</p>
-    <% @article.errors.full_messages.each do |msg| %>
-      <ul>
-        <li><%= msg %></li>
-      </ul>
+    <% if @article.errors.any? %>
+      <div class="errors">
+        <p>You have the following <%= pluralize(@article.errors.count, 'error')%>:</p>
+        <% @article.errors.full_messages.each do |msg| %>
+          <ul>
+            <li>- <%= msg %></li>
+          </ul>
+        <% end %>
+      </div>
     <% end %>
-  <% end %>
 
-  <%= f.label :title %><br>
-  <%= f.text_field :title, autofocus: true %>
-  <br><br>
-  <%= f.label :text %><br>
-  <%= f.text_area :text%>
-  <br><br>
-  <%= f.label :image %><br>
-  <%= f.file_field :image, direct_upload: true %>
-  <br><br>
-  <%= fields_for(@selected) do |s| %>
-    <%= s.label 'Select as many categories as needed' %><br>
-    <%= s.collection_select(:selected_id, @categories, :id, :name, {selected: 4, include_hidden: false}, { multiple: true }) %>
+    <%= f.label :title %><br>
+    <%= f.text_field :title, autofocus: true, class: 'title' %>
+    <br><br>
+    <%= f.label :text %><br>
+    <%= f.text_area :text, size: '100x17'%>
+    <br><br>
+    <%= f.label :image %><br>
+    <%= f.file_field :image, direct_upload: true %>
+    <br><br>
+    <%= fields_for(@selected) do |s| %>
+      <%= s.label :categories %><br>
+      <%= s.collection_select(:selected_id, @categories, :id, :name, {selected: 4, include_hidden: false}, { multiple: true }) %></br>
+      <span> Use ctrl + click to select as many categories as needed
+      </span>
+    <% end %>
+    <br><br>
+    <%= f.submit 'Submit your Article!', class: 'btn' %>
   <% end %>
-  <br><br>
-  <%= f.submit 'Submit your Article!' %>
-<% end %>
+</div>

@@ -10,9 +10,7 @@ li {
 }
 
 .logo {
-  height: 4.5rem;
   padding: 0.5rem 1rem;
-  padding-right: 5rem;
   margin: -0.5rem -1rem;
 
   img {
@@ -20,7 +18,7 @@ li {
     height: 100%;
     border-radius: 10rem;
     object-fit: contain;
-    object-position: center center;
+    object-position: left center;
   }
 }
 
@@ -50,6 +48,8 @@ nav {
   }
 
   .logo {
+    min-height: 4.5rem;
+    max-height: 7rem;
     border-bottom: #ff2500 4px solid;
     margin-bottom: calc(-0.5rem - 4px);
   }
@@ -61,4 +61,8 @@ footer {
   width: 100%;
   background-color: #473c3c;
   font-size: 0.8rem;
+
+  .logo {
+    height: 4.5rem;
+  }
 }
