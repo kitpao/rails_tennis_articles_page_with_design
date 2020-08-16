@@ -1,0 +1,9 @@
+This webpage was created with <3 by kitpao
+
+Project:
+  - Repo: https://github.com/kitpao/rails_tennis_articles_page_with_design
+
+Programmer:
+  - Github: @kitpao
+  - linkedin: https://www.linkedin.com/in/kitzia-paola-vidal/
+  - mail: kitpao91@gmail.com

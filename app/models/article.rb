@@ -11,6 +11,6 @@ class Article < ApplicationRecord
   scope :most_popular, -> { find_by(votes_count: maximum(:votes_count)) }
 
   before_validation(on: :create) do
-    title.capitalize!
+    title&.capitalize!
   end
 end
