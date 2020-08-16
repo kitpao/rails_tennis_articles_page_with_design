@@ -58,11 +58,15 @@ module ApplicationHelper
   end
 
   def vote_toggle_btn(art)
-    vote = Vote.find_by(article: art, user: current_user)
-    if vote
-      link_to('(^.^)b Click to Unvote', article_vote_path(id: vote.id, article_id: art.id), method: :delete)
+    if current_user
+      vote = Vote.find_by(article: art, user: current_user)
+      if vote
+        link_to('(^.^)b Click to Unvote', article_vote_path(id: vote.id, article_id: art.id), method: :delete)
+      else
+        link_to('(°-°) Click to Vote!', article_votes_path(article_id: art.id), method: :post)
+      end
     else
-      link_to('(°-°) Click to Vote!', article_votes_path(article_id: art.id), method: :post)
+      link_to('Log in to vote', log_in_path)
     end
   end
 end
