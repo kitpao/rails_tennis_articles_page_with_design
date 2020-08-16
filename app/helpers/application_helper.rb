@@ -40,13 +40,17 @@ module ApplicationHelper
   end
 
   def display_photo(art)
-    'photo' + art.title
+    if art.image.attached?
+      image_tag(art.image)
+    else
+      image_tag("https://source.unsplash.com/800x600/?{tennis},{#{art.title}}")
+    end
   end
 
   def display_details(art)
     content_tag(:h1, @category.name, class: 'orange-text') +
       content_tag(:h2, art.title) +
-      content_tag(:p, simple_format(art.text.truncate(350))) +
+      content_tag(:p, simple_format(art.text.truncate(180))) +
       content_tag(:span, "#{art.votes_count} votes - Your reaction: ") +
       content_tag(:span, nil, class: 'orange-links') do
         vote_toggle_btn(art)
