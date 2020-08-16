@@ -24,18 +24,27 @@ module ApplicationHelper
   def display_4articles(art, ind)
     if ind < 2
       content_tag(:div, nil, class: 'photo') do
-        'photo ' + art
+        display_photo(art)
       end +
         content_tag(:div, nil, class: 'details') do
-          'text ' + art
+          display_details(art)
         end
     else
       content_tag(:div, nil, class: 'details') do
-        'text ' + art
+        display_details(art)
       end +
         content_tag(:div, nil, class: 'photo') do
-          'photo ' + art
+          display_photo(art)
         end
     end
+  end
+
+  def display_photo(art)
+    'photo ' + art.title
+  end
+
+  def display_details(art)
+    content_tag(:h1, @category.name, class: 'orange-text') +
+      content_tag(:h2, art.title)
   end
 end

@@ -10,4 +10,9 @@ class Article < ApplicationRecord
   scope :ordered_by_most_recent, -> { order(created_at: :desc) }
 
   scope :most_popular, -> { find_by(votes_count: maximum(:votes_count)) }
+
+  before_validation(on: :create) do
+    title.capitalize!
+    text.capitalize!
+  end
 end

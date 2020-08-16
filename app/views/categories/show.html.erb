@@ -4,7 +4,7 @@
  <%# art.id %>
 <%# end %>-->
 <div class="container grid">
-  <% ('a'..'d').each_with_index do |art, ind| %>
+  <% @recent_related_articles.each_with_index do |art, ind| %>
     <div class="grid article-image">
       <%= display_4articles(art, ind)%>
     </div>
