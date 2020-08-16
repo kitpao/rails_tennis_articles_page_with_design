@@ -37,6 +37,12 @@ img {
   width: 100%;
 }
 
+h1,
+h2 {
+  font-size: 1.1rem;
+  font-weight: 900;
+}
+
 .flex {
   display: flex;
 }
@@ -63,6 +69,10 @@ img {
 
 .orange-text {
   color: #ffa500;
+}
+
+.dark-orange-text {
+  color: #ff5a00;
 }
 
 .white-text {

@@ -1,7 +1,11 @@
 .homepage {
+  img {
+    filter: brightness(70%);
+    z-index: -1;
+  }
+
   .details {
     position: absolute;
-    background-color: white;
   }
 }
 
@@ -13,17 +17,16 @@
 
   .details {
     bottom: 0;
+    padding: 0 1.5rem;
   }
 }
 
 .recent-article1 {
   position: relative;
   display: block;
-  background-color: yellow;
   width: 25%;
   height: calc(30vh - 3.6rem); /* 30% available screen */
   .details {
-    position: absolute;
     height: 100%;
     display: flex;
     flex-direction: column;

@@ -1,11 +1,11 @@
 class CategoriesController < ApplicationController
   # add before filter to create categories and 1 article per category
   def index
-    categories = Category.includes(:articles).all
+    @categories = Category.includes(:articles).all
     articles = Article.all
     @most_popular = articles.most_popular
     @articles_by_cat = []
-    categories.each do |cat|
+    @categories.each do |cat|
       @articles_by_cat << recent_article(cat)
     end
   end

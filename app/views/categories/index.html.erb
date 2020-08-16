@@ -1,33 +1,22 @@
-<!--<h1>The homepage, displaying the most recent article per category and the most voted article</h1>
-<%#= @most_popular.title %>
-</br>
-<%# @articles_by_cat.each do |art| %>
- <%#= art.title %>
-<%# end %>-->
+
 <div class="homepage">
   <a href="#" class="hero-container">
     <div class="details">
-      SOME TEXT that is pretty large for testing purposes, it's just here floating on the bottom of the image
+      <h1 class="dark-orange-text"><%= @most_popular.title %></h1>
+      <p class="white-text"><%=@most_popular.text.truncate_words(56) %></p>
     </div>
-    <%= image_tag("https://source.unsplash.com/featured/?{event},{ event1}", class: 'image_for_events') %>
+    <%= display_photo(@most_popular) %>
   </a>
 
   <div class="flex">
-    <a href="#" class="recent-article1">
-      <div class="details">
-        <p>Category</p>
-        <p>Title</p>
-      </div>
-      <%= image_tag("https://source.unsplash.com/featured/?{event},{ event1}", class: 'image_for_events') %>
-    </a>
-    <a href="#" class="recent-article2">
-      art2
-    </a>
-    <a href="#" class="recent-article1">
-      art3
-    </a>
-    <a href="#" class="recent-article2">
-      art4
-    </a>
+    <% @articles_by_cat.each_with_index do |art, ind| %>
+      <a href="#" class="recent-article1">
+        <div class="details white-text">
+          <p><%= @categories.find(ind+1).name %></p>
+          <p><%= art.title %></p>
+        </div>
+        <%= display_photo(art) %>
+      </a>
+    <% end %>
   </div>
 </div>

@@ -3,12 +3,6 @@
   display: grid;
   grid-template-columns: repeat(2, 1fr);
 
-  h1,
-  h2 {
-    font-size: 1.1rem;
-    font-weight: 900;
-  }
-
   h1 {
     display: inline-block;
     border-bottom: #ffa500 2px solid;
