@@ -42,13 +42,15 @@ nav {
   max-height: 6.5rem;
   width: 100%;
   background-color: #fff;
+  height: 6.5rem;
+  z-index: 2;
 
   li {
     text-transform: uppercase;
   }
 
   .logo {
-    max-height: 5.5rem;
+    height: 5.5rem;
     border-bottom: #ff2500 4px solid;
     margin-bottom: calc(-0.5rem - 4px);
   }
