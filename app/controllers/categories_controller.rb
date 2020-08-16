@@ -22,7 +22,7 @@ class CategoriesController < ApplicationController
   end
 
   def recent_article(category)
-    category.articles.ordered_by_most_recent.first # check if @ is required
+    category.articles.ordered_by_most_recent.first
   end
 end
 
