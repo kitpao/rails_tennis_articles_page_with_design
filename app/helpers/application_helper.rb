@@ -20,4 +20,22 @@ module ApplicationHelper
         end
     end
   end
+
+  def display_4articles(art, ind)
+    if ind < 2
+      content_tag(:div, nil, class: 'photo') do
+        'photo ' + art
+      end +
+        content_tag(:div, nil, class: 'details') do
+          'text ' + art
+        end
+    else
+      content_tag(:div, nil, class: 'details') do
+        'text ' + art
+      end +
+        content_tag(:div, nil, class: 'photo') do
+          'photo ' + art
+        end
+    end
+  end
 end

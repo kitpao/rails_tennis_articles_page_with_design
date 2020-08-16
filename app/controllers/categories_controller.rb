@@ -18,16 +18,13 @@ class CategoriesController < ApplicationController
   private
 
   def recent_related_articles
-    @recent_related_articles ||= @category.articles.ordered_by_most_recent
+    @recent_related_articles ||= @category.articles.ordered_by_most_recent.limit(4)
   end
 
   def recent_article(category)
-    category.articles.ordered_by_most_recent.first
+    category.articles.ordered_by_most_recent.first # check if @ is required
   end
 end
-
-# scope by :most_recent_article_by_category
-# scope by :most voted article
 
 # for images in views, use <%= url_for(@article.image) %>
 

@@ -1,0 +1,14 @@
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.container {
+  height: calc(100vh - 12rem);
+}
+
+.photo {
+  border: red solid 1px;
+  background-color: blue;
+}
