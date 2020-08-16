@@ -1,6 +1,33 @@
-<h1>The homepage, displaying the most recent article per category and the most voted article</h1>
-<%= @most_popular.title %>
+<!--<h1>The homepage, displaying the most recent article per category and the most voted article</h1>
+<%#= @most_popular.title %>
 </br>
-<% @articles_by_cat.each do |art| %>
- <%= art.title %>
-<% end %>
+<%# @articles_by_cat.each do |art| %>
+ <%#= art.title %>
+<%# end %>-->
+<div class="homepage">
+  <a href="#" class="hero-container">
+    <div class="details">
+      SOME TEXT that is pretty large for testing purposes, it's just here floating on the bottom of the image
+    </div>
+    <%= image_tag("https://source.unsplash.com/featured/?{event},{ event1}", class: 'image_for_events') %>
+  </a>
+
+  <div class="flex">
+    <a href="#" class="recent-article1">
+      <div class="details">
+        <p>Category</p>
+        <p>Title</p>
+      </div>
+      <%= image_tag("https://source.unsplash.com/featured/?{event},{ event1}", class: 'image_for_events') %>
+    </a>
+    <a href="#" class="recent-article2">
+      art2
+    </a>
+    <a href="#" class="recent-article1">
+      art3
+    </a>
+    <a href="#" class="recent-article2">
+      art4
+    </a>
+  </div>
+</div>

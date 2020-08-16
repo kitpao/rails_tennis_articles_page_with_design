@@ -1,3 +1,4 @@
+
 ul {
   margin: 0;
   padding: 0.5rem 1rem;
@@ -14,8 +15,6 @@ li {
   margin: -0.5rem -1rem;
 
   img {
-    width: 100%;
-    height: 100%;
     border-radius: 10rem;
     object-fit: contain;
     object-position: left center;
@@ -28,11 +27,7 @@ li {
   padding: 0 0.15rem;
 
   img {
-    width: 100%;
-    height: 100%;
     border-radius: 15rem;
-    object-fit: cover;
-    object-position: center center;
   }
 }
 
