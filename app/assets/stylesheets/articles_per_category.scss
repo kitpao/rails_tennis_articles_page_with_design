@@ -20,7 +20,7 @@
 }
 
 .container {
-  height: calc(100vh - 12rem);
+  min-height: calc(100vh - 12rem);
 }
 
 .photo {
@@ -29,5 +29,8 @@
 }
 
 .details {
-  padding: 0.3rem 0.8rem;
+  padding-top: 0.3rem;
+  padding-left: 0.8rem;
+  padding-right: 1.6rem;
+  padding-bottom: 2rem;
 }
