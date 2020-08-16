@@ -47,6 +47,18 @@ module ApplicationHelper
     content_tag(:h1, @category.name, class: 'orange-text') +
       content_tag(:h2, art.title) +
       content_tag(:p, simple_format(art.text.truncate(400))) +
-      content_tag(:span, "#{art.votes_count} votes")
+      content_tag(:span, "#{art.votes_count} votes - Your reaction: ") +
+      content_tag(:span, nil, class: 'orange-links') do
+        vote_toggle_btn(art)
+      end
+  end
+
+  def vote_toggle_btn(art)
+    vote = Vote.find_by(article: art, user: current_user)
+    if vote
+      link_to('(^.^)b Click to Unvote!', article_vote_path(id: vote.id, article_id: art.id), method: :delete)
+    else
+      link_to('(°-°) Click to Vote!', article_votes_path(article_id: art.id), method: :post)
+    end
   end
 end
