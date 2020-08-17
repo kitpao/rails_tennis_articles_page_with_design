@@ -84,6 +84,9 @@ Technical features of the project:
 - Use ActiveRecord validations
 - Deploys to Heroku
 
+Outside requirements feature:
+- The webpage is responsive
+
 ### Built With
 The project was developed using the following technologies:
 - [RUBY](https://www.ruby-lang.org/es/)
