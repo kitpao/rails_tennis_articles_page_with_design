@@ -1,5 +1,5 @@
 require 'rails_helper'
-# Rails.application.load_seed
+Rails.application.load_seed
 
 RSpec.describe 'User', type: :feature do
   scenario 'can signup' do
