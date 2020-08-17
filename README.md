@@ -14,7 +14,7 @@
     <a href="https://github.com/kitpao/rails_tennis_articles_page_with_design"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://github.com/kitpao/rails_tennis_articles_page_with_design">View Demo</a>
+    <a href="https://tennix-sports-blog.herokuapp.com/">View Demo</a>
     ·
     <a href="https://github.com/kitpao/rails_tennis_articles_page_with_design/issues">Report Bug</a>
     ·
@@ -46,31 +46,28 @@ The Entity Relationship Diagram used in the database
 ![image](https://user-images.githubusercontent.com/53256139/90346832-e0367880-dff1-11ea-8efd-b0e573f259fd.png)
 
 
-The specifications for this project are: 
+The User Interface specifications for this project are: 
 * The project is a desktop web app, currently supports Firefox.
 * App validates all user input
-* A user can invite another user only to his/her event
 * The app is an MVP of the full product (with the full graphical design but only basic features that can be easily extended in the future)
 * The project is deployed and accessible online here: https://tennix-sports-blog.herokuapp.com/
 * The user logs in to the app, only by typing the username (a proper authenticated login is not a requirement)
-* The user is presented with the homepage (see the Homepage screenshot above) that includes:
-  * Featured article with full-width image and title in the first row. This should be an article with the biggest number of votes. Skip the carousel widget and weather and city information.
+* The user is presented with the homepage that includes:
+  * Featured article with full-width image and title in the first row. This should be an article with the biggest number of votes.
   * List of all categories in order of priority. Each category should be displayed as a square with its name on the top and its most recent article's title in the bottom. The background image should be the image of the most recent article in this category.
-* When the user clicks the category name they can see all articles in that category (see the Articles in selected category page screenshot above):
+* When the user clicks the category name they can see all articles in that category:
   * Articles are sorted by most recent.
   * Each article displays: image, title, truncated text as preview and its author name.
   * Add extra button to add a vote for article (each user can vote only once).
 * Each page should use the same top menu and footer:
-  * Top menu is presented at the *Homepage* screenshot above. It should include only links to pages that are implemented: *Home* and *Write an article*.
-  * Footer is presented at the *Articles in selected category page* screenshot above.
+  * Top menu is presented at the *Homepage* sketch. It should include only links to pages that are implemented.
+  * Footer is presented at the *Articles in selected category page* sketch.
 * When user opens "*Write an article*" page:
   * A form with all necessary fields is displayed.
-* Extended feature for MVP
 
-
-Other features of the project:
-- Use Active Record for users uploaded images
-- If an image is not provided, a random image from unsplash is taken
+Technical features of the project:
+- Use Active Storage and Cloudinary for users uploaded images
+- If an image is not provided, a random image from Unsplash is taken
 - Use RESTFUL routes
 - Use controllers to intercept user requests
 - Use view templates for HTML with embedded data
@@ -81,7 +78,7 @@ Other features of the project:
 - Use Active Record queries to translate app requirements to SQL queries
 - Use ActiveRecord validations
 - Pass user input from view through controller to model in a safe way
-- Remember about thin controllers and distinction between logic and presentation tiers
+- Use thin controllers and distinguish between logic and presentation tiers
 - Avoid n+1 queries problem
 - Use unit tests (Rspec)
 - Use ActiveRecord validations
@@ -94,7 +91,7 @@ The project was developed using the following technologies:
 - [RAILS](https://rubyonrails.org/)
 
 ## Instalation Guide
-Click on the following [link](https://gitpod.io/github.com/kitpao/rails_tennis_articles_page_with_design/tree/associations),
+Click on the following [link](https://gitpod.io/github.com/kitpao/rails_tennis_articles_page_with_design/tree/mvp-branch),
 
 * Wait for the workspace to load and then click on the terminal, type `bundle install` and hit enter to install gems
 * Then `yarn install --check-files` and hit enter
