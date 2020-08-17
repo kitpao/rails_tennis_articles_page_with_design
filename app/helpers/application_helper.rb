@@ -50,11 +50,13 @@ module ApplicationHelper
   def display_details(art)
     content_tag(:h1, @category.name, class: 'orange-text') +
       content_tag(:h2, art.title) +
-      content_tag(:p, simple_format(art.text.truncate(160))) +
+      content_tag(:p, simple_format(art.text.truncate(140))) +
       content_tag(:span, "#{art.votes_count} votes - Your reaction: ") +
       content_tag(:span, nil, class: 'orange-links') do
         vote_toggle_btn(art)
-      end
+      end +
+      content_tag(:br) +
+      content_tag(:span, "Written by #{art.author.name.capitalize}")
   end
 
   def vote_toggle_btn(art)
