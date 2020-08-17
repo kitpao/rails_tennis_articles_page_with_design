@@ -15,6 +15,9 @@
 
 .container {
   min-height: calc(100vh - 12rem);
+  @media only screen and (max-width: 1270px) {
+    grid-template-columns: repeat(1, 1fr);
+  }
 }
 
 .photo {
