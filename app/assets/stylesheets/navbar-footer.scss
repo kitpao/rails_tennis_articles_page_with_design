@@ -39,7 +39,6 @@ nav {
   position: fixed;
   top: 0;
   border-bottom: #838080 4px solid;
-  max-height: 6.5rem;
   width: 100%;
   background-color: #fff;
   height: 6.5rem;
@@ -59,11 +58,14 @@ nav {
 footer {
   position: fixed;
   bottom: 0;
+  height: 5.5rem;
   width: 100%;
   background-color: #473c3c;
   font-size: 0.8rem;
+  z-index: 2;
 
   .logo {
     height: 4.5rem;
+    max-width: 10.5rem;
   }
 }
