@@ -1,11 +1,12 @@
 .homepage {
   img {
     filter: brightness(70%);
-    z-index: -1;
+    z-index: 0;
   }
 
   .details {
     position: absolute;
+    z-index: 1;
   }
 }
 
