@@ -100,11 +100,11 @@ Click on the following [link](https://gitpod.io/github.com/kitpao/rails_tennis_a
 * Then `yarn install --check-files` and hit enter
 * Run `rails db:setup` and hit enter
 * Run `rails c` and hit enter to interact with the objects in the console (User, Vote, Article, Category: see the schema for more information)
-
--> or see the direct page working on https://tennix-sports-blog.herokuapp.com/categories/1 and you can test it directly in the browser!!
+ 
+-> Or see the direct page working on https://tennix-sports-blog.herokuapp.com/categories/1 and you can test it directly in the browser!!
 
 ## Run Tests
-After following the previous steps, run `rspec` on terminal
+After following the first 3 steps in the [Instalation guide](#instalation-guide), run `rspec` on terminal
 
 ## Roadmap
 
