@@ -67,6 +67,18 @@ h2 {
   color: #ff5a00;
 }
 
+.gray-links a:hover {
+  color: #ff5a00;
+}
+
+.orange-links a:hover {
+  color: #ff5a00;
+}
+
+.dark-orange-links a:hover {
+  filter: brightness(200%);
+}
+
 .orange-text {
   color: #ffa500;
 }
