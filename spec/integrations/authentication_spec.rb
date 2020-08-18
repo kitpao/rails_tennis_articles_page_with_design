@@ -1,10 +1,11 @@
 require 'rails_helper'
-# Rails.application.load_seed
 
 RSpec.feature 'Authentications', type: :feature do
   describe 'the login/out process' do
     before :each do
-      User.create!(name: 'test')
+      user = User.create!(name: 'test')
+      article = Article.create!(author: user, title: 'A title', text: 'Some text')
+      Vote.create!(user: user, article: article)
       visit 'log_in'
       fill_in 'session_name', with: 'test'
       click_button 'commit'
@@ -15,8 +16,8 @@ RSpec.feature 'Authentications', type: :feature do
     end
 
     it 'signs me out' do
-      click_link('Log out')
-      expect(page).to have_content 'Log in'
+      click_link('Logout')
+      expect(page).to have_content 'Login'
     end
   end
 end

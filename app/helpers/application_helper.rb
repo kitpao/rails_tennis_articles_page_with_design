@@ -95,9 +95,9 @@ module ApplicationHelper
         concat link_to(
           content_tag(:div, nil, class: 'details white-text') do
             content_tag(:p, @categories.find(ind + 1).name) +
-            content_tag(:p, art.title)
+            (content_tag(:p, art.title) if art)
           end +
-            display_photo(art),
+            (display_photo(art) if art),
           '#', class: 'recent-article1'
         )
       end
