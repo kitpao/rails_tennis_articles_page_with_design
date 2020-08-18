@@ -2,16 +2,7 @@
   <h1>Write your article!</h1>
   <%= form_with model: @article, local: true do |f| %>
 
-    <% if @article.errors.any? %>
-      <div class="errors">
-        <p>You have the following <%= pluralize(@article.errors.count, 'error')%>:</p>
-        <% @article.errors.full_messages.each do |msg| %>
-          <ul>
-            <li>- <%= msg %></li>
-          </ul>
-        <% end %>
-      </div>
-    <% end %>
+    <%= errors_message(@article) %>
 
     <%= f.label :title %><br>
     <%= f.text_field :title, autofocus: true, class: 'title' %>

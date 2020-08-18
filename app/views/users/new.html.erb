@@ -2,16 +2,7 @@
   <h1>Sign up here</h1>
   <%= form_with model: @user, local: true do |f| %>
 
-    <% if @user.errors.any? %>
-      <div class="errors">
-        <p>You have the following <%= pluralize(@user.errors.count, 'error')%>:</p>
-        <% @user.errors.full_messages.each do |msg| %>
-          <ul>
-            <li>- <%= msg %></li>
-          </ul>
-        <% end %>
-      </div>
-    <% end %>
+    <%= errors_message(@user) %>
 
     <%= f.label :your_username %><br>
     <%= f.text_field :name, autofocus: true %>

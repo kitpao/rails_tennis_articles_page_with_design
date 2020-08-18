@@ -1,4 +1,19 @@
 module ApplicationHelper
+  def errors_message(object)
+    return unless object.errors.any?
+
+    content_tag(:div, nil, class: 'errors') do
+      content_tag(:p) do
+        "You have the following #{pluralize(object.errors.count, 'error')}"
+      end +
+        content_tag(:ul) do
+          object.errors.full_messages.each do |msg|
+            concat content_tag(:li, "- #{msg}")
+          end
+        end
+    end
+  end
+
   def session_controls
     if current_user
       content_tag(:li) do
