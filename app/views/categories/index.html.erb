@@ -8,15 +8,5 @@
     <%= display_photo(@most_popular) %>
   </a>
 
-  <div class="flex">
-    <% @articles_by_cat.each_with_index do |art, ind| %>
-      <a href="#" class="recent-article1">
-        <div class="details white-text">
-          <p><%= @categories.find(ind+1).name %></p>
-          <p><%= art.title %></p>
-        </div>
-        <%= display_photo(art) %>
-      </a>
-    <% end %>
-  </div>
+  <%= show_articles_by_cat(@articles_by_cat) %>
 </div>

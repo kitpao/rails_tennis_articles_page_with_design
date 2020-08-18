@@ -86,4 +86,21 @@ module ApplicationHelper
       link_to('Log in to vote', log_in_path)
     end
   end
+
+  def show_articles_by_cat(articles)
+    return if articles.nil?
+
+    content_tag(:div, nil, class: 'flex') do
+      articles.each_with_index do |art, ind|
+        concat link_to(
+          content_tag(:div, nil, class: 'details white-text') do
+            content_tag(:p, @categories.find(ind + 1).name) +
+            content_tag(:p, art.title)
+          end +
+            display_photo(art),
+          '#', class: 'recent-article1'
+        )
+      end
+    end
+  end
 end
