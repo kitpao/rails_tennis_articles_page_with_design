@@ -94,17 +94,24 @@ The project was developed using the following technologies:
 - [RAILS](https://rubyonrails.org/)
 
 ## Instalation Guide
-Click on the following [link](https://gitpod.io/github.com/kitpao/rails_tennis_articles_page_with_design/tree/mvp-branch),
+To use an online environment click on the following [link](https://gitpod.io/github.com/kitpao/rails_tennis_articles_page_with_design/tree/mvp-branch) OR git clone this project locally, then:
 
-* Wait for the workspace to load and then click on the terminal, type `bundle install` and hit enter to install gems
-* Then `yarn install --check-files` and hit enter
-* Run `rails db:setup` and hit enter
-* Run `rails c` and hit enter to interact with the objects in the console (User, Vote, Article, Category: see the schema for more information)
- 
+* 1. Click on the terminal, type `bundle install` and hit enter to install gems
+* 2. Then `yarn install --check-files` and hit enter
+* 3. Run `rails db:migrate` and hit enter
+* 4. Run `rails db:seed` and hit enter
+* To use the **console**, run `rails c` and hit enter to interact with the objects (User, Vote, Article, Category: see the schema for more information)
+* Advanced: To **run a local server** in gitpod:
+  * Run `rails server` and select "Open browser" from the pop up message in the bottom right.
+  * Copy the code that appears in the new page ("config.hosts << "some_keys_here.gitpod.io") and paste it in any place inside the config/environments/development.rb file, inside the Rails.application.configure method.
+  * Save it with ctrl+s
+  * Restart the server by clicking on terminal and pressing ctrl+c to stop the current server and running `rails server` again
+  * Select "Open browser" and you are done
+
 -> Or see the direct page working on https://tennix-sports-blog.herokuapp.com/categories/1 and you can test it directly in the browser!!
 
 ## Run Tests
-After following the first 3 steps in the [Instalation guide](#instalation-guide), run `rspec` on terminal
+After following the first 4 steps in the [Instalation guide](#instalation-guide), run `rspec` on terminal
 
 ## Roadmap
 
@@ -138,6 +145,7 @@ See the [open issues](https://github.com/kitpao/rails_tennis_articles_page_with_
 - [Microverse curriculum Rails section](https://www.microverse.org/?grsf=6ns691)
 - [Rails Guides](https://guides.rubyonrails.org)
 - Design acknowledge to [Nelson Sakwa on Behance](https://www.behance.net/sakwadesignstudio)
+- Thanks to [Majo Reyes](https://github.com/majovanilla) for her kind help with the making of the Tennix logo :smile:
 
 <!-- MARKDOWN LINKS & IMAGES -->
 [contributors-shield]: https://img.shields.io/github/contributors/kitpao/rails_tennis_articles_page_with_design.svg?style=flat-square
