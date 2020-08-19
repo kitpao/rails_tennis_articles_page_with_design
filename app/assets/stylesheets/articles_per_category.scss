@@ -1,0 +1,34 @@
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+
+  h1 {
+    display: inline-block;
+    border-bottom: #ffa500 2px solid;
+  }
+
+  h2 {
+    margin: 0;
+  }
+}
+
+.container {
+  min-height: calc(100vh - 12rem);
+
+  @media only screen and (max-width: 1270px) {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+.photo {
+  background-color: orange;
+  height: calc(50vh - 6rem);
+}
+
+.details {
+  padding-top: 0.3rem;
+  padding-left: 0.8rem;
+  padding-right: 1.6rem;
+  padding-bottom: 2rem;
+}

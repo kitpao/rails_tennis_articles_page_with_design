@@ -1,0 +1,13 @@
+<div class="form-page">
+  <h1>Sign up here</h1>
+  <%= form_with model: @user, local: true do |f| %>
+
+    <%= errors_message(@user) %>
+
+    <%= f.label :your_username %><br>
+    <%= f.text_field :name, autofocus: true %>
+    <br><br>
+    <%= f.submit 'Log in!', class: 'btn' %>
+  <% end %>
+
+</div>

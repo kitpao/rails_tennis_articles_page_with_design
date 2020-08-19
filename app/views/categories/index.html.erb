@@ -1,0 +1,12 @@
+
+<div class="homepage">
+  <a href="#" class="hero-container">
+    <div class="details">
+      <h1 class="dark-orange-text"><%= @most_popular.title %></h1>
+      <p class="white-text"><%=@most_popular.text.truncate_words(56) %></p>
+    </div>
+    <%= display_photo(@most_popular) %>
+  </a>
+
+  <%= show_articles_by_cat(@articles_by_cat) %>
+</div>
