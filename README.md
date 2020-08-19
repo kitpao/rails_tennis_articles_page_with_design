@@ -47,7 +47,7 @@ The Entity Relationship Diagram used in the database
 
 
 The User Interface specifications for this project are: 
-* The project is a desktop web app, currently supports Firefox.
+* The project is a desktop web app.
 * App validates all user input
 * The app is an MVP of the full product (with the full graphical design but only basic features that can be easily extended in the future)
 * The project is deployed and accessible online here: https://tennix-sports-blog.herokuapp.com/
