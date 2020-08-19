@@ -1,4 +1,14 @@
 module ApplicationHelper
+  def display_propper_flash
+    if flash[:notice]
+      content_tag(:div, flash[:notice], class: 'flash notice', align: 'center')
+    elsif flash[:success]
+      content_tag(:div, flash[:success], class: 'flash success', align: 'center')
+    elsif flash[:danger]
+      content_tag(:div, flash[:danger], class: 'flash danger', align: 'center')
+    end
+  end
+
   def errors_message(object)
     return unless object.errors.any?
 
@@ -20,16 +30,14 @@ module ApplicationHelper
         content_tag(:span) do
           link_to "Write as #{current_user.name}", new_article_path
         end
-      end +
-        content_tag(:li, ' | ') +
+      end + content_tag(:li, ' | ') +
         content_tag(:li) do
           link_to 'Logout', log_out_path, method: :delete
         end
     else
       content_tag(:li) do
         link_to 'Login', log_in_path
-      end +
-        content_tag(:li, ' | ') +
+      end + content_tag(:li, ' | ') +
         content_tag(:li) do
           link_to 'Register', sign_up_path
         end
@@ -63,15 +71,12 @@ module ApplicationHelper
   end
 
   def display_details(art)
-    content_tag(:h1, @category.name, class: 'orange-text') +
-      content_tag(:h2, art.title) +
+    content_tag(:h1, @category.name, class: 'orange-text') + content_tag(:h2, art.title) +
       content_tag(:p, simple_format(art.text.truncate(140))) +
       content_tag(:span, "#{art.votes_count} votes - Your reaction: ") +
       content_tag(:span, nil, class: 'orange-links') do
         vote_toggle_btn(art)
-      end +
-      content_tag(:br) +
-      content_tag(:span, "Written by #{art.author.name.capitalize}")
+      end + content_tag(:br) + content_tag(:span, "Written by #{art.author.name.capitalize}")
   end
 
   def vote_toggle_btn(art)
@@ -94,11 +99,8 @@ module ApplicationHelper
       articles.each_with_index do |art, ind|
         concat link_to(
           content_tag(:div, nil, class: 'details white-text') do
-            content_tag(:p, @categories.find(ind + 1).name) +
-            (content_tag(:p, art.title) if art)
-          end +
-            (display_photo(art) if art),
-          '#', class: 'recent-article1'
+            content_tag(:p, @categories.find(ind + 1).name) + (content_tag(:p, art.title) if art)
+          end + (display_photo(art) if art), '#', class: 'recent-article1'
         )
       end
     end
